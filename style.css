@@ -1,0 +1,78 @@
+*, *::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Amatic SC', cursive;
+}
+
+.panels{
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.panel{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    transition: flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+}
+
+.panel > * {
+    width: 100%;
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s;
+}
+
+.panel1{
+    background-image: url(./images/alex-shuper-OycvR_0rW8E-unsplash.jpg);
+}
+.panel2{
+    background-image: url(./images/daniel-j-schwarz-AvYA4Qqnfxg-unsplash.jpg);
+}
+.panel3{
+    background-image: url(./images/martin-baron-u87tQESFc9Y-unsplash.jpg);
+}
+.panel4{
+    background-image: url(./images/paul-bill-qkp60sGtJPU-unsplash.jpg);
+}
+.panel5{
+    background-image: url(./images/tim-schmidbauer-QjIxYGGAT2A-unsplash.jpg);
+}
+
+.panel > *:first-child{ transform: translateY(-100%);}
+.panel > *:last-child{transform: translateY(100%);}
+.panel.open-active > *:first-child{transform: translateY(0);}
+.panel.open-active > *:last-child{transform: translateY(0);}
+
+.panel p{
+    text-transform: uppercase;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    font-size: 3rem;
+}
+
+.panel p:nth-child(2){
+    font-size: 4rem;
+}
+
+.panel.open{
+    font-size: 7rem;
+    flex-grow: 5;
+}
